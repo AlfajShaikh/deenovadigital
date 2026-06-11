@@ -52,15 +52,15 @@ export default function TeamInfo() {
       description: "Creating beautiful interfaces and seamless user experiences.",
       socials: { linkedin: "#", dribbble: "#" }
     },
-    {
-      id: 6,
-      name: "Sneha Joshi",
-      role: "UI/UX Designer",
-      category: "Design",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-      description: "Designing user-focused products with strong visual identity.",
-      socials: { linkedin: "#", dribbble: "#" }
-    },
+    // {
+    //   id: 6,
+    //   name: "Sneha Joshi",
+    //   role: "UI/UX Designer",
+    //   category: "Design",
+    //   image: "https://randomuser.me/api/portraits/women/6.jpg",
+    //   description: "Designing user-focused products with strong visual identity.",
+    //   socials: { linkedin: "#", dribbble: "#" }
+    // },
   ];
 
   const categories = ["All", "Development", "Design", "Cloud"];
@@ -129,7 +129,7 @@ export default function TeamInfo() {
           {marqueeMembers.map((member, index) => (
             <div
               key={`${member.id}-${index}`}
-              className="w-[290px] sm:w-[340px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/70 p-4 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between my-4"
+              className="w-[290px] sm:w-[300px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/70 p-4 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between my-4"
             >
               <div className="space-y-5">
                 {/* Image Wrap Wrapper with Hover Overlay */}
