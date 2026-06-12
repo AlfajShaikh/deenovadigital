@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-   "homepage": "https://AlfajShaikh.github.io/deenovadigital",
-    "scripts": {
+  "homepage": "https://AlfajShaikh.github.io/deenovadigital",
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist"
@@ -13,7 +13,8 @@
     "@emailjs/browser": "^4.4.1",
     "@material-tailwind/react": "^2.1.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-ga4": "^3.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
