@@ -11,6 +11,7 @@ import TeamInfo from './components/TeamInfo/teamInfo'
 import ServicesProvided from './components/Servicesprovided/servicesProvided'
 import Footer from './components/footer/footer'
 import ContactInfo from './components/contact/contactInfo'
+import Blog from './components/blog/blog'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,8 +19,9 @@ function App() {
   return (
     <>
  {/* <Header/> */}
- <Banner />
+ {/* <Banner /> */}
  <LandingPage/>
+
 
 
 

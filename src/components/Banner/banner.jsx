@@ -109,14 +109,17 @@ export default function Banner() {
                         </div>
 
                         <div className="absolute -top-8 -left-8 bg-blue-600 text-white p-4 rounded-2xl shadow-xl">
-                            ⚡ Web Development
+                            ⚡ Software Development
                         </div>
 
                         <div className="absolute -bottom-8 -right-8 bg-cyan-500 text-white p-4 rounded-2xl shadow-xl">
                             📱 Mobile Apps
                         </div>
 
+                        
+
                     </motion.div>
+
 
                 </div>
             </div>
