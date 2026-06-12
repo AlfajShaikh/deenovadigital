@@ -73,7 +73,7 @@ export default function TeamInfo() {
   const marqueeMembers = [...baseFiltered, ...baseFiltered, ...baseFiltered];
 
   return (
-    <section id="about" className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/60 m-7">
+    <section id="about" className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/60 ">
       {/* Inject custom infinite marquee keyframes */}
       <style>{`
         @keyframes marquee {
