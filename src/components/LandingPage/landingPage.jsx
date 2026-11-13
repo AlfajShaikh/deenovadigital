@@ -64,102 +64,128 @@ export default function LandingPage() {
                     <Banner />
                 </section>
                 {/* 1. DYNAMIC ACCENT HEADER SECTION */}
-                <header
-                    className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                        ? "bg-white/80 backdrop-blur-md shadow-lg shadow-gray-100/40 border-b border-gray-100 py-3"
-                        : "bg-transparent py-5"
-                        }`}
+    <header
+    className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/80 backdrop-blur-md shadow-lg shadow-gray-100/40 border-b border-gray-100 py-3"
+        : "bg-transparent py-5"
+        }`}
+>
+    <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+
+            {/* Brand Logo Configuration */}
+            <a href="/" className="flex items-center gap-3 group">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-tr flex items-center justify-center text-white font-bold text-xl shadow-md shadow-blue-200 group-hover:scale-105 transition-transform duration-200">
+                    <img src={logo} alt="Deenova Logo" className="w-full h-full object-contain rounded-xl" />
+                </div>
+                <div>
+                    <h1 className="text-xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">
+                        Deenova <span className="text-blue-600">Digital</span>
+                    </h1>
+                    <p className="text-[11px] font-medium text-gray-400 tracking-wider uppercase">
+                        Smart Business Solutions
+                    </p>
+                </div>
+            </a>
+
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-10">
+                {["Home", "Services", "Consultation", "Clients", "Blogs"].map((item) => (
+                    <a
+                        key={item}
+                        href={`#${item.toLowerCase()}`}
+                        className="text-sm font-semibold text-gray-600 hover:text-blue-600 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all hover:after:w-full transition-colors"
+                    >
+                        {item}
+                    </a>
+                ))}
+            </nav>
+
+            {/* Actions: WhatsApp + CTA */}
+            <div className="hidden md:flex items-center gap-3">
+                {/* WhatsApp Quick Button (Green) */}
+                <a
+                    href="https://wa.me/917977364398?text=Hi%20Deenova%20Digital,%20I%20would%20like%20to%20discuss%20a%20project."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat on WhatsApp"
+                    className="p-2.5 rounded-xl bg-[#25D366] text-white hover:bg-[#20ba5a] shadow-sm shadow-green-200 transition-all duration-200 hover:scale-105 flex items-center justify-center"
                 >
-                    <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex items-center justify-between h-16">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                </a>
 
-                            {/* Brand Logo Configuration */}
-                            <a href="/" className="flex items-center gap-3 group">
-                                <div className="w-11 h-11 rounded-xl bg-gradient-to-tr flex items-center justify-center text-white font-bold text-xl shadow-md shadow-blue-200 group-hover:scale-105 transition-transform duration-200">
-                                    <img src={logo} alt="Deenova Logo" className="w-full h-full object-contain rounded-xl" />
-                                </div>
-                                <div>
-                                    <h1 className="text-xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">
-                                        Deenova <span className="text-blue-600">Digital</span>
-                                    </h1>
-                                    <p className="text-[11px] font-medium text-gray-400 tracking-wider uppercase">
-                                        Smart Business Solutions
-                                    </p>
-                                </div>
-                            </a>
+                {/* Premium CTA Micro-Interactive Element */}
+                <a
+                    href="#consultation"
+                    className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-xl group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 transition-all"
+                >
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-xl group-hover:bg-opacity-0 group-hover:text-white text-gray-900 font-semibold">
+                        Get Started
+                    </span>
+                </a>
+            </div>
 
-                            {/* Desktop Navigation Links */}
-                            <nav className="hidden md:flex items-center gap-10">
-                                {["Home", "Services", "Consultation", "Clients", "Blogs"].map((item) => (
-                                    <a
-                                        key={item}
-                                        href={`#${item.toLowerCase()}`}
-                                        className="text-sm font-semibold text-gray-600 hover:text-blue-600 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all hover:after:w-full transition-colors"
-                                    >
-                                        {item}
-                                    </a>
-                                ))}
-                            </nav>
+            {/* Mobile Adaptive Hamburger Controller */}
+            <button
+                className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none transition"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle Menu"
+            >
+                {menuOpen ? (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                ) : (
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                )}
+            </button>
+        </div>
 
-                            {/* Premium CTA Micro-Interactive Element */}
-                            <div className="hidden md:block">
-                                <a
-                                    href="#consultation"
-                                    className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-xl group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 transition-all"
-                                >
-                                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-xl group-hover:bg-opacity-0 group-hover:text-white text-gray-900 font-semibold">
-                                        Get Started
-                                    </span>
-                                </a>
-                            </div>
+        {/* Mobile Draw Dropdown Overlay */}
+        <div
+            className={`md:hidden absolute left-0 w-full bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-in-out ${menuOpen ? "top-full opacity-100 visible" : "top-[-200px] opacity-0 invisible"
+                }`}
+        >
+            <div className="px-6 py-6 flex flex-col gap-4 bg-white">
+                {["Home", "Services", "Consultation", "Clients", "Blogs"].map((item) => (
+                    <a
+                        key={item}
+                        href={`#${item.toLowerCase()}`}
+                        onClick={() => setMenuOpen(false)}
+                        className="text-base font-semibold text-gray-700 hover:text-blue-600 py-1 transition-colors"
+                    >
+                        {item}
+                    </a>
+                ))}
+                <hr className="border-gray-100 my-2" />
+                <a
+                    href="https://wa.me/917977364398?text=Hi%20Deenova%20Digital,%20I%20would%20like%20to%20discuss%20a%20project."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 bg-[#25D366] text-white text-center py-3 rounded-xl font-semibold shadow-md shadow-green-200 hover:bg-[#20ba5a] transition"
+                >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+                <a
+                    href="#consultation"
+                    onClick={() => setMenuOpen(false)}
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-3 rounded-xl font-semibold shadow-md shadow-blue-200 hover:opacity-95 transition"
+                >
+                    Get Started
+                </a>
+            </div>
+        </div>
 
-                            {/* Mobile Adaptive Hamburger Controller */}
-                            <button
-                                className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none transition"
-                                onClick={() => setMenuOpen(!menuOpen)}
-                                aria-label="Toggle Menu"
-                            >
-                                {menuOpen ? (
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                ) : (
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-
-                        {/* Mobile Draw Dropdown Overlay */}
-                        <div
-                            className={`md:hidden absolute left-0 w-full bg-white border-b border-gray-100 shadow-xl transition-all duration-300 ease-in-out ${menuOpen ? "top-full opacity-100 visible" : "top-[-200px] opacity-0 invisible"
-                                }`}
-                        >
-                            <div className="px-6 py-6 flex flex-col gap-4 bg-white">
-                                {["Home", "Services", "Consultation", "Clients", "Blogs"].map((item) => (
-                                    <a
-                                        key={item}
-                                        href={`#${item.toLowerCase()}`}
-                                        onClick={() => setMenuOpen(false)}
-                                        className="text-base font-semibold text-gray-700 hover:text-blue-600 py-1 transition-colors"
-                                    >
-                                        {item}
-                                    </a>
-                                ))}
-                                <hr className="border-gray-100 my-2" />
-                                <a
-                                    href="#consultation"
-                                    onClick={() => setMenuOpen(false)}
-                                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center py-3 rounded-xl font-semibold shadow-md shadow-blue-200 hover:opacity-95 transition"
-                                >
-                                    Get Started
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </header>
+    </div>
+</header>
 
                 {/* 2. HERO BANNER SECTION */}
                 <section className="relative overflow-hidden bg-white py-12 lg:py-20">
